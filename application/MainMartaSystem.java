@@ -38,14 +38,6 @@ public class MainMartaSystem extends Application {
 	public void calculateAmount(String string) throws ParseException {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 		int i = 0;
-		
-		
-		//String debug1day = "2018-07-24 21:49:00";
-		//LocalDateTime debug = LocalDateTime.parse(debug1day, formatter);
-		//Duration durationBetween = Duration.between(debug, LocalDateTime.now());
-		//LocalDateTime formatDateTimeString = LocalDateTime.parse(string, formatter);
-		//Duration day = Duration.ofDays(1);
-
 
 		LocalDateTime stringFormatted = LocalDateTime.parse(string, formatter);
 		Duration durationBetween = Duration.between(stringFormatted, LocalDateTime.now());
@@ -53,7 +45,6 @@ public class MainMartaSystem extends Application {
 		if (durationBetween.compareTo(Duration.ofDays(1)) < 1) {
 			System.out.println("It has been less than 1 day");
 		} else {
-			System.out.println("do something");
 			while(durationBetween.compareTo(Duration.ofDays(i)) > 0) {
 				System.out.println("up");
 				i++;
@@ -74,7 +65,6 @@ public class MainMartaSystem extends Application {
 
 
 	public static int getDays() {
-		// TODO Auto-generated method stub
 		return days;
 	}
 
